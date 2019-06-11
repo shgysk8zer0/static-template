@@ -1,3 +1,9 @@
+/img/icons.svg
+*.min.*
+*.map
+~*
+*.bak
+*.tmp
 # Logs
 logs
 *.log
