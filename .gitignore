@@ -1,3 +1,4 @@
+*.sql
 /img/icons.svg
 *.min.*
 *.map
