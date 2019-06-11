@@ -24,7 +24,7 @@
       img-src 'self' https://secure.gravatar.com/avatar/ https://i.imgur.com/;
       script-src 'self';
       style-src 'self';
-      connect-src 'self' https://api.pwnedpasswords.com https://haveibeenpwned.com/api/v2/;
+      connect-src 'self';
       worker-src: 'self';
       font-src 'self';
       media-src 'none';
@@ -32,7 +32,6 @@
       object-src: 'none';
       manifest-src 'self';
       form-action 'self';
-      report-uri https://superuser.report-uri.com/r/d/csp/enforce;
       reflected-xss block;
       block-all-mixed-content;
       upgrade-insecure-requests;

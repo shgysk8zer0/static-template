@@ -1,10 +1,10 @@
 {
-  "name": "Password Checker",
-  "short_name": "Passwords",
-  "version": "1.0.3",
+  "name": "",
+  "short_name": "",
+  "version": "1.0.0",
   "start_url": "/",
   "lang": "en",
-  "description": "Checks passwords against have i been pwned",
+  "description": "",
   "icons": [{
     "src": "/img/favicon.svg",
     "sizes": "any",
