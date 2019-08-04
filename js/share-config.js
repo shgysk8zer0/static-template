@@ -1,4 +1,4 @@
-const BASE = document.baseURI;
+const BASE = 'https://cdn.kernvalley.us';
 
 export const facebook = {
 	url: new URL('https://www.facebook.com/sharer/sharer.php?u&t'),
