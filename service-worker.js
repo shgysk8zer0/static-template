@@ -60,36 +60,43 @@ const config = {
 	].map(path => new URL(path, location.origin).href),
 };
 
-self.addEventListener('install', async () => {
-	const cache = await caches.open(config.version);
-	const keys = await caches.keys();
-	const old = keys.filter(k => k !== config.version);
-	await Promise.all(old.map(key => caches.delete(key)));
-
-	try {
-		await cache.addAll(config.stale);
-	} catch (err) {
-		console.error(err);
-	}
-
-	skipWaiting();
-});
-
-self.addEventListener('activate', event => {
-	event.waitUntil(async function() {
-		clients.claim();
-	}());
-});
-
 self.addEventListener('fetch', event => {
-	if (event.request.method === 'GET' && config.stale.includes(event.request.url)) {
-		event.respondWith((async () => {
-			const cached = await caches.match(event.request);
-			if (cached instanceof Response) {
-				return cached;
-			} else {
-				return await fetch(event.request);
-			}
-		})());
+	switch(event.request.method) {
+	case 'GET':
+		if (Array.isArray(config.stale) && config.stale.includes(event.request.url)) {
+			event.respondWith((async () => {
+				const cached = await caches.match(event.request);
+				if (cached instanceof Response) {
+					return cached;
+				} else {
+					return await fetch(event.request);
+				}
+			})());
+		} else if (Array.isArray(config.fresh) && config.fresh.includes(event.request.url)) {
+			event.respondWith((async () => {
+				if (navigator.onLine) {
+					const resp = await fetch(event.request);
+					const cache = await caches.open(config.version);
+					cache.add(resp.clone());
+					return resp;
+				} else {
+					return await caches.match(event.request);
+				}
+			})());
+		} else if (Array.isArray(config.allowed) && config.allowed.some(host => new URL(event.request.url).host === host)) {
+			event.respondWith((async () => {
+				const resp = await caches.match(event.request);
+				if (resp instanceof Response) {
+					return resp;
+				} else if (navigator.onLine) {
+					const resp = await fetch(event.request);
+					const cache = await caches.open(config.version);
+					cache.add(resp.clone());
+					return resp;
+				} else {
+					return await fetch(event.request);
+				}
+			})());
+		}
 	}
 });

@@ -18,6 +18,11 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
+  "screenshots": [{
+    "src": "url",
+    "sizes": "wxh",
+    "type": "image/*"
+  }],
   "theme_color": "#528ff9",
   "background_color": "#fefefe",
   "display": "standalone",
