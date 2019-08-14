@@ -5,9 +5,9 @@ const config = {
 	stale: [
 		'/',
 		'/js/index.js',
-		'https://cdn.kernvalley.us/components/js/share-button.js',
-		'https://cdn.kernvalley.us/components/js/share-config.js',
-		'https://cdn.kernvalley.us/components/js/current-year.js',
+		'https://cdn.kernvalley.us/components/share-button.js',
+		'https://cdn.kernvalley.us/js/std-js/share-config.js',
+		'https://cdn.kernvalley.us/components/current-year.js',
 		'https://cdn.kernvalley.us/js/std-js/deprefixer.js',
 		'https://cdn.kernvalley.us/js/std-js/shims.js',
 		'https://cdn.kernvalley.us/js/std-js/md5.js',

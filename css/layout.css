@@ -28,6 +28,12 @@ legend {
 	font-weight: bold;
 }
 
+dialog {
+	max-height: var(--dialog-max-height, 90vh);
+	max-width: var(--dialog-max-width, 90vw);
+	overflow: auto;
+}
+
 .no-margins {
 	margin: 0;
 }

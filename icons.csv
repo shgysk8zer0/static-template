@@ -1,8 +1,12 @@
 dialog-password,img/adwaita-icons/status/dialog-password.svg
-icon-mono,img/icon-mono.svg
+logo,img/logo.svg
 check,img/octicons/check.svg
 search,img/octicons/search.svg
+sign-in,img/octicons/sign-in.svg
+sign-out,img/octicons/sign-out.svg
+contact-new,img/adwaita-icons/actions/contact-new.svg
 x,img/octicons/x.svg
+plus,img/octicons/plus.svg
 mail,img/octicons/mail.svg
 credit-card,img/octicons/credit-card.svg
 call-start,img/adwaita-icons/actions/call-start.svg
@@ -12,6 +16,7 @@ mark-location,img/adwaita-icons/actions/mark-location.svg
 avatar-default,img/adwaita-icons/status/avatar-default.svg
 network-server,img/adwaita-icons/places/network-server.svg
 globe,img/octicons/globe.svg
+bell,img/octicons/bell.svg
 calendar,img/octicons/calendar.svg
 link-external,img/octicons/ling-external.svg
 info,img/octicons/info.svg
@@ -20,6 +25,7 @@ web-browser,img/adwaita-icons/apps/web-browser.svg
 facebook,img/logos/facebook.svg
 twitter,img/logos/twitter.svg
 linkedin,img/logos/linkedin.svg
+youtube,img/logos/youtube.svg
 mark-github,img/octicons/mark-github.svg
 repo,img/octicons/repo.svg
 issue-opened,img/octicons/issue-opened.svg
