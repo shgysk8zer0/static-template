@@ -60,6 +60,27 @@ const config = {
 	].map(path => new URL(path, location.origin).href),
 };
 
+self.addEventListener('install', async () => {
+	try {
+		for (const key of await caches.keys()) {
+			await caches.delete(key);
+		}
+
+		const cache = await caches.open(config.version);
+		await cache.addAll(config.stale).catch(console.error);
+	} catch (err) {
+		console.error(err);
+	}
+
+	skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+	event.waitUntil(async function() {
+		clients.claim();
+	}());
+});
+
 self.addEventListener('fetch', event => {
 	switch(event.request.method) {
 	case 'GET':
