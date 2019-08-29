@@ -9,7 +9,7 @@
   for="/*"
   [headers.values]
     Link = '''
-      </css/styles/index.css>; rel=preload; as=style, \
+      </css/index.css>; rel=preload; as=style, \
       </css/js/index.js>; rel=preload; as=script, \
       </img/icons.svg>; rel=preload; as=image
     '''
