@@ -33,6 +33,7 @@
       manifest-src 'self';
       form-action 'self';
       reflected-xss block;
+      report-uri https://api.kernvalley.us/Errors/CSP/
       block-all-mixed-content;
       upgrade-insecure-requests;
       disown-opener;'''

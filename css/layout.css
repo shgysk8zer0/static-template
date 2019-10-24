@@ -3,12 +3,7 @@
 @import url("./sidebar.css");
 @import url("./main.css");
 @import url("./footer.css");
-
-body.grid {
-	grid-template-areas: 'header header header' 'nav nav nav' '. main sidebar' 'footer footer footer';
-	grid-template-rows: calc(100vh - var(--nav-height)) var(--nav-height) minmax(600px, auto) auto;
-	grid-template-columns: 1fr minmax(350px, 1000px) 1fr;
-}
+@import url("https://cdn.kernvalley.us/css/core-css/layout/default/index.css");
 
 .content {
 	margin: 1.2em;
