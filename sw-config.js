@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 */
 const config = {
 	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0',
 	stale: [
@@ -38,6 +39,12 @@ const config = {
 		'https://cdn.kernvalley.us/css/core-css/utility.css',
 		'https://cdn.kernvalley.us/css/core-css/fonts.css',
 		'https://cdn.kernvalley.us/css/core-css/animations.css',
+		'https://cdn.kernvalley.us/css/core-css/theme/base.css',
+		'https://cdn.kernvalley.us/css/core-css/theme/default/index.css',
+		'https://cdn.kernvalley.us/css/core-css/theme/default/light.css',
+		'https://cdn.kernvalley.us/css/core-css/theme/default/dark.css',
+		'https://cdn.kernvalley.us/css/core-css/layout/shared.css',
+		'https://cdn.kernvalley.us/css/core-css/layout/default/index.css',
 		'https://cdn.kernvalley.us/css/normalize/normalize.css',
 		'https://cdn.kernvalley.us/css/animate.css/animate.css',
 		'/img/icons.svg',
