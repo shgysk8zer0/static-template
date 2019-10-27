@@ -2,6 +2,10 @@ import 'https://cdn.kernvalley.us/js/std-js/deprefixer.js';
 import 'https://cdn.kernvalley.us/js/std-js/shims.js';
 import 'https://cdn.kernvalley.us/components/share-button.js';
 import 'https://cdn.kernvalley.us/components/current-year.js';
+import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
+import 'https://cdn.kernvalley.us/components/gravatar-img.js';
+import 'https://cdn.kernvalley.us/components/login-button.js';
+import 'https://cdn.kernvalley.us/components/logout-button.js';
 import {$, ready, registerServiceWorker} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 
 if (document.documentElement.dataset.hasOwnProperty('serviceWorker')) {
