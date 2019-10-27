@@ -1,7 +1,7 @@
 #footer {
-	grid-area: footer;
 	padding: 1.4em;
-	background: var(--contrast-color);
+	background-color: #232323;
+	color: #fafafa;
 }
 
 .social-links {

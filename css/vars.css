@@ -1,8 +1,0 @@
-@import url("https://cdn.kernvalley.us/css/core-css/theme/default/index.css");
-
-:root {
-	--nav-height: 2.7rem;
-	--header-height: 0;
-	--footer-height: auto;
-	--contrast-color: var(--primary-color-dark);
-}
