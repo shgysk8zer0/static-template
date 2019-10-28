@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("./vars.css");
+@import url("https://cdn.kernvalley.us/css/core-css/theme/default/index.css");
 @import url("https://cdn.kernvalley.us/css/normalize/normalize.css");
 @import url("https://cdn.kernvalley.us/css/core-css/rem.css");
 @import url("https://cdn.kernvalley.us/css/core-css/viewport.css");
@@ -26,4 +26,9 @@ input[hidden]:not(:checked) + label[for].btn-toggle .when-checked {
 
 input[hidden]:checked + label[for].btn-toggle .when-unchecked {
 	display: none;
+}
+
+img.avatar {
+	vertical-align: middle;
+	margin-left: 1.2em;
 }
