@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#"  itemscope="">
+<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" data-layout="right-sidebar" itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#"  itemscope="">
 	<head>
 		<base href="/" />
 		<meta charset="utf-8" />
@@ -46,12 +46,28 @@
 		<link rel="preload" href="/img/icons.svg" as="image" type="image/svg+xml" />
 		<link rel="stylesheet" href="/css/index.css" media="all" />
 	</head>
-	<body id="top" class="grid font-main background-primary color-default">
-		<header id="header"></header>
-		<nav id="nav" class="sticky top shadow background-accent color-alt z-3"></nav>
-		<main></main>
-		<aside id="sidebar"></aside>
-		<footer id="footer" class="background-contrast color-alt">
+	<body id="top" class="grid font-main background-primary color-default overflow-x-hidden">
+		<header id="header" class="background-cover background-fixed"></header>
+		<nav id="nav" class="sticky top shadow background-accent color-alt z-3">
+			<button is="login-button" title="Sign In" class="btn btn-accept" hidden="">Sign In</button>
+			<button is="logout-button" title="Sign Out" class="btn btn-reject" hidden="">Sign Out</button>
+		</nav>
+		<main id="main" class="card shadow">
+			<article>
+				<header>
+					<h2 class="center">Bacon Ipsum</h2>
+					<details>
+						<summary>By <b>Chris Zuber</b><img is="gravatar-img" hash="43578597e449298f5488c2407c8a8ae5" class="round avatar" alt="Gravatar" sizes="2rem" /></summary>
+						<div>Published on <time>Oct. 26, 2019</time></div>
+					</details>
+				</header>
+				<section data-columns="auto">
+					<bacon-ipsum paras="8"></bacon-ipsum>
+				</section>
+			</article>
+		</main>
+		<aside id="sidebar" class="card shadow"></aside>
+		<footer id="footer">
 			<div class="social-links cols-2">
 				<div class="cols inline-block">
 					<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
