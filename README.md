@@ -6,6 +6,7 @@ A template repository for static sites, including skeleton JS, CSS, SVGs, fonts,
 ![GitHub last commit](https://img.shields.io/github/last-commit/shgysk8zer0/static-template.svg)
 ![GitHub release](https://img.shields.io/github/release/shgysk8zer0/static-template.svg)
 
+[![Donate using Liberapay](https://img.shields.io/liberapay/receives/shgysk8zer0.svg?logo=liberapay)](https://liberapay.com/shgysk8zer0/donate "Donate using Liberapay")
 ![Keybase PGP](https://img.shields.io/keybase/pgp/shgysk8zer0.svg)
 ![Keybase BTC](https://img.shields.io/keybase/btc/shgysk8zer0.svg)
 
