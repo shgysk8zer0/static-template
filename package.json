@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/shgysk8zer0/static-template",
   "scripts": {
-    "preinstall": "if [[ -f '.gitmodules' ]]; then git submodule update --recursive --init; fi",
+    "preinstall": "ls -lah && if [[ -f '.gitmodules' ]]; then git submodule update --recursive --init; fi",
     "postinstall": "npm run build:icons",
     "start": "npm run netlify:serve",
     "test": "npm run lint:js && npm run lint:css",
