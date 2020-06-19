@@ -1,10 +1,12 @@
 ---
-
+---
 #############################
 #############################
 ## JavaScript Linter rules ##
 #############################
 #############################
+
+extends: eslint:recommended
 
 ############
 # Env Vars #
@@ -18,24 +20,47 @@ env:
 # Global Vars #
 ###############
 globals:
-  Atomics: readonly
-  SharedArrayBuffer: readonly
+  URLSearchParams: false
+  ga: false
+  skipWaiting: false
+  clients: false
+  PasswordCredential: false
 
 ###############
 # Parser vars #
 ###############
-parser: '@typescript-eslint/parser'
+parser: babel-eslint
 parserOptions:
-  ecmaVersion: 2018
   sourceType: module
+  ecmaVersion: 2018
 
 ###########
 # Plugins #
 ###########
 plugins:
-  - '@typescript-eslint'
+  - async-await
 
 #########
 # Rules #
 #########
-rules: {}
+rules:
+  indent:
+  - 2
+  - tab
+  quotes:
+  - 2
+  - single
+  semi:
+  - 2
+  - always
+  no-console: 0
+  async-await/space-after-async: 2
+  async-await/space-after-await: 2
+  generator-star-spacing:
+  - error
+  - before: false
+    after: true
+    anonymous: neither
+    method:
+      before: true
+      after: false

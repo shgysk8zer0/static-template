@@ -49,8 +49,9 @@ jobs:
       - name: Lint Code Base
         uses: github/super-linter@v2.0.0
         env:
-          # @TODO Add HTML & CSS when available
+          # @TODO Add HTML when/if available
           VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: master
           VALIDATE_YAML: true
           VALIDATE_JSON: true
           VALIDATE_XML: true
@@ -69,5 +70,7 @@ jobs:
           VALIDATE_DOCKER: false
           VALIDATE_GO: false
           VALIDATE_TERRAFORM: false
+          VALIDATE_CSS: true
           # ANSIBLE_DIRECTORY:
           ACTIONS_RUNNER_DEBUG: false
+          # DEFAULT_WORKSPACE:
