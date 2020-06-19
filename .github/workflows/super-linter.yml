@@ -63,14 +63,14 @@ jobs:
           VALIDATE_RUBY: false
           VALIDATE_COFFEE: false
           VALIDATE_ANSIBLE: false
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_JAVASCRIPT_STANDARD: true
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TYPESCRIPT_STANDARD: false
           VALIDATE_DOCKER: false
           VALIDATE_GO: false
           VALIDATE_TERRAFORM: false
-          VALIDATE_CSS: true
+          VALIDATE_CSS: false
           # ANSIBLE_DIRECTORY:
           ACTIONS_RUNNER_DEBUG: false
           # DEFAULT_WORKSPACE:
