@@ -14,7 +14,7 @@ A template repository for static sites, including skeleton JS, CSS, SVGs, fonts,
 ![GitHub forks](https://img.shields.io/github/forks/shgysk8zer0/static-template.svg?style=social)
 ![GitHub stars](https://img.shields.io/github/stars/shgysk8zer0/static-template.svg?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social)
-- - - 
+- - -
 
   - [Code of Conduct](./.github/CODE_OF_CONDUCT.md)
   - [Contributing](./.github/CONTRIBUTING.md)
