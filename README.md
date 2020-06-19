@@ -16,6 +16,6 @@ A template repository for static sites, including skeleton JS, CSS, SVGs, fonts,
 ![Twitter Follow](https://img.shields.io/twitter/follow/shgysk8zer0.svg?style=social)
 - - - 
 
-- [Code of Conduct](./.github/CODE_OF_CONDUCT.md)
-- [Contributing](./.github/CONTRIBUTING.md)
-- [Security Policy](./.github/SECURITY.md)
+  - [Code of Conduct](./.github/CODE_OF_CONDUCT.md)
+  - [Contributing](./.github/CONTRIBUTING.md)
+  <!-- - [Security Policy](./.github/SECURITY.md) -->
