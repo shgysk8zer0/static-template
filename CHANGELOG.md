@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 <!-- markdownlint-disable -->
+## [v1.0.2] - 2020-06-29
+
+### Changed
+- Update all dependencies
+- Maintain consistency with [jekyll-template](https://github.com/shgysk8zer0/jekyll-template)
+- Update `eslint` config / rules
+
 ## [v1.0.1] 2020-06-19
 
 ### Added
