@@ -15,7 +15,7 @@
       "img": "img/",
       "html": "./"
     },
-    "icons": "icons.csv"
+    "icons": "./icons.csv"
   },
   "repository": {
     "type": "git",
@@ -44,9 +44,10 @@
     "git:fetch": "git fetch --prune --tags",
     "git:submodules": "if [ -f '.gitmodules' ]; then git submodule update --init --recursive; fi",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "eslint ${npm_package_config_dir_js}",
+    "lint:js": "eslint .",
     "lint:css": "stylelint ${npm_package_config_dir_css}",
-    "fix:js": "eslint ${npm_package_config_dir_js} --fix",
+    "fix:css": "stylelint ${npm_package_config_dir_css} --fix",
+    "fix:js": "eslint. --fix",
     "build": "npm run build:icons && npm run build:css && npm run build:js",
     "build:css": "if [ -f 'postcss.config.js' ]; then postcss ${npm_package_config_dir_css}index.css -o ${npm_package_config_dir_css}index.min.css; fi",
     "build:js": "if [ -f 'rollup.config.js' ]; then rollup --config; fi",
@@ -70,10 +71,12 @@
     "netlify-cli": "^2.58.0",
     "postcss": "^7.0.32",
     "postcss-cli": "^7.1.1",
-    "postcss-cssnext": "^3.1.0",
+    "postcss-custom-properties": "^9.1.1",
     "postcss-discard-comments": "^4.0.2",
     "postcss-import": "^12.0.1",
     "postcss-import-url": "^5.1.0",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-preset-env": "^6.7.0",
     "postcss-url": "^8.0.0",
     "rollup": "^2.21.0",
     "rollup-plugin-terser": "^6.1.0",

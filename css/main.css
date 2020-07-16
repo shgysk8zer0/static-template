@@ -1,6 +1,11 @@
-main {
+#main {
 	--link-color: #049ccf;
 	--link-decoration: underline;
+}
+
+#share-target {
+	gap: 0.3em 0.5em;
+	justify-content: center;
 }
 
 .breach.card {
