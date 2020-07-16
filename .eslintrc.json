@@ -6,7 +6,7 @@
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 2019
+        "ecmaVersion": 2018
     },
     "plugins": ["async-await"],
     "rules": {
@@ -28,8 +28,5 @@
         "async-await/space-after-async": 2,
         "async-await/space-after-await": 2
     },
-    "globals": {
-        "URLSearchParams": false,
-        "ga": false
-    }
+    "globals": {}
 }

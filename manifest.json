@@ -1,33 +1,42 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "static template",
+  "short_name": "static",
   "version": "1.0.0",
-  "start_url": "/",
   "lang": "en",
-  "description": "",
+  "dir": "ltr",
+  "description": "A template repository for static sites, including skeleton JS, CSS, SVGs, fonts, etc.",
+  "orientation": "any",
+  "start_url": "/",
+  "theme_color": "#528ff9",
+  "background_color": "#242424",
+  "display": "standalone",
   "icons": [{
     "src": "/img/favicon.svg",
-    "sizes": "any",
-    "type": "image/svg+xml"
+    "sizes": "192x192",
+    "type": "image/svg+xml",
+    "purpose": "any maskable"
   }, {
     "src": "/img/icon-192.png",
     "sizes": "192x192",
-    "type": "image/png"
+    "type": "image/png",
+    "purpose": "any maskable"
   }, {
     "src": "/img/icon-512.png",
     "sizes": "512x512",
-    "type": "image/png"
+    "type": "image/png",
+    "purpose": "any maskable"
   }],
   "screenshots": [{
-    "src": "url",
-    "sizes": "wxh",
-    "type": "image/*"
+    "src": "https://i.imgur.com/Mx3Wlp0l.jpeg",
+    "sizes": "640x313",
+    "type": "image/jpeg"
   }],
-  "theme_color": "#528ff9",
-  "background_color": "#fefefe",
-  "display": "standalone",
+  "shortcuts": [],
+  "share_target": {},
+  "categories": [],
+  "related_applications": [],
   "developer": {
 		"name": "Chris Zuber",
-		"url": "http://shgysk8zer0.github.io"
+		"url": "https://kernvalley.us"
 	}
 }

@@ -11,6 +11,7 @@
 		<meta itemprop="keywords" content="" />
 		<meta name="referrer" content="origin-when-cross-origin"/>
 		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta itemprop="thumbnailUrl" content="" />
 		<!-- Social data -->
 		<!-- Facebook | OpenGraph -->
@@ -33,8 +34,10 @@
 		<meta name="msapplication-TileColor" content="#528ff9" />
 		<meta name="msapplication-config" content="/browserconfig.xml" />
 		<meta name="theme-color" content="#528ff9" />
-		<title itemprop="headline"></title>
-		<script type="module" src="/js/index.js" async=""></script>
+		<meta name="apple-mobile-web-app-status-bar-style" content="#528ff9" />
+		<title itemprop="headline">Static Template</title>
+		<!-- <script type="module" src="/js/index.js" async=""></script> -->
+		<script src="/js/index.min.js" async=""></script>
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="license" href="/LICENSE" />
 		<link rel="icon" href="/img/favicon.svg" type="image/svg+xml" sizes="any" />
@@ -44,7 +47,8 @@
 		<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#528ff9" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="preload" href="/img/icons.svg" as="image" type="image/svg+xml" />
-		<link rel="stylesheet" href="/css/index.css" media="all" />
+		<!-- <link rel="stylesheet" href="/css/index.css" media="all" /> -->
+		<link rel="stylesheet" href="/css/index.min.css" media="all" />
 	</head>
 	<body id="top" class="grid font-main background-primary color-default overflow-x-hidden">
 		<header id="header" class="background-cover background-fixed"></header>
@@ -54,11 +58,41 @@
 		</nav>
 		<main id="main" class="card shadow">
 			<article>
-				<header>
+				<header class="card">
 					<h2 class="center">Bacon Ipsum</h2>
 					<details>
-						<summary>By <b>Chris Zuber</b><img is="gravatar-img" hash="43578597e449298f5488c2407c8a8ae5" class="round avatar" alt="Gravatar" sizes="2rem" /></summary>
-						<div>Published on <time>Oct. 26, 2019</time></div>
+						<summary>
+							<span>By</span>
+							<img is="gravatar-img" email="admin@kernvalley.us" class="round avatar" alt="Gravatar" sizes="2rem" />
+							<b>Chris Zuber</b>
+						</summary>
+						<div>Published on <time is="date-locale" datetime="2020-07-16T15:57-07:00">Oct. 26, 2019</time></div>
+					</details>
+					<hr />
+					<details open="">
+						<summary>
+							<svg class="current-color icon" width="16" height="16" aria-hidden="true" aria-label="icon" aria-role="img">
+								<use xlink:href="/img/icons.svg#public-share"></use>
+							</svg>
+							<span>Share on</span>
+						</summary>
+						<div class="flex row wrap" id="share-target">
+							<share-to-button  title="Share on Facebook" tabindex="0" target="facebook">
+								<span slot="text">Facebook</span>
+							</share-to-button>
+							<share-to-button  title="Share on Twitter" tabindex="0" target="twitter">
+								<span slot="text">Twitter</span>
+							</share-to-button>
+							<share-to-button  title="Share on LinkedIn" tabindex="0" target="linkedin">
+								<span slot="text">LinkedIn</span>
+							</share-to-button>
+							<share-to-button  title="Share on Reddit" tabindex="0" target="reddit">
+								<span slot="text">Reddit</span>
+							</share-to-button>
+							<share-to-button  title="Share with Gmail" tabindex="0" target="gmail">
+								<span slot="text">Gmail</span>
+							</share-to-button>
+						</div>
 					</details>
 				</header>
 				<section data-columns="auto">
@@ -70,60 +104,70 @@
 		<footer id="footer">
 			<div class="social-links cols-2">
 				<div class="cols inline-block">
-					<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
+					<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener noreferrer" rel="external noopener">
+						<svg class="current-color icon social-icon" aria-hidden="true" aria-label="icon" aria-role="img">
 							<use xlink:href="/img/icons.svg#mark-github" />
 						</svg>
 						<span>GitHub Profile</span>
 					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/static-template" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
+					<a class="block" href="https://github.com/shgysk8zer0/static-template" target="_blank" rel="external noopener noreferrer" rel="external noopener">
+						<svg class="current-color icon social-icon" aria-hidden="true" aria-label="icon" aria-role="img">
 							<use xlink:href="/img/icons.svg#repo" />
 						</svg>
 						<span>GitHub Repo</span>
 					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/static-template/issues" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
+					<a class="block" href="https://github.com/shgysk8zer0/static-template/issues" target="_blank" rel="external noopener noreferrer" rel="external noopener">
+						<svg class="current-color icon social-icon" aria-hidden="true" aria-label="icon" aria-role="img">
 							<use xlink:href="/img/icons.svg#issue-opened" />
 						</svg>
 						<span>Report a Problem</span>
 					</a>
 				</div>
 				<div class="cols inline-block">
-					<a class="block" href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="current-color icon social-icon">
+					<a class="block" href="https://kernvalley.us" target="_blank" rel="external noopener noreferrer" rel="external noopener" itemprop="sameAs">
+						<svg class="current-color icon social-icon" aria-hidden="true" aria-label="icon" aria-role="img">
 							<use xlink:href="/img/icons.svg#web-browser" />
 						</svg>
 						<span>My Website</span>
 					</a>
-					<a class="block" href="https://twitter.com/shgysk8zer0" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
+					<a class="block" href="https://twitter.com/kern_valley" target="_blank" rel="external noopener noreferrer" rel="external noopener" itemprop="sameAs">
+						<svg class="icon social-icon" aria-hidden="true" aria-label="icon" aria-role="img">
 							<use xlink:href="/img/icons.svg#twitter" />
 						</svg>
 						<span>On Twitter</span>
 					</a>
-					<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
+					<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener noreferrer" rel="external noopener" itemprop="sameAs">
+						<svg class="icon social-icon" aria-hidden="true" aria-label="icon" aria-role="img">
 							<use xlink:href="/img/icons.svg#linkedin" />
 						</svg>
 						<span>LinkedIn</span>
 					</a>
 				</div>
 			</div>
+			<button is="pwa-install" class="btn btn-primary btn-big btn-wide" src="/service-worker.js" scope="/" title="Install Web App" reloadonupdate="">
+				<svg class="icon current-color" role="img" aria-hidden="true" aria-label="icon" aria-role="img">
+					<use xlink:href="/img/icons.svg#system-software-install"></use>
+				</svg>
+				<span>Install</span>
+			</button>
 			<hr />
 			<div class="copyright">
-				<span>&copy;</span>
-				<time itemprop="copyrightYear" is="current-year">2019</time>
-				<span itemprop="copyrightHolder" itemtype="https://schema.org/Person" itemscope="">
-					<a href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="url">
-						<span itemprop="givenName">Chris</span>
-						<span itemprop="familyName">Zuber</span>
-					</a>
-				</span>
+				<github-user user="kernvalley">
+					<h3 slot="header" class="center">Created By</h3>
+					<div slot="footer">
+						<span>©</span>
+						<time itemprop="copyrightYear">2020</time>
+						<span itemprop="copyrightHolder" itemtype="https://schema.org/Organization" itemscope="" hidden="">
+							<a href="https://kernvalley.us" target="_blank" rel="external noopener noreferrer" rel="external noopener" itemprop="url">
+								<span itemprop="name">KernValley.US</span>
+							</a>
+						</span>
+					</div>
+				</github-user>
 			</div>
 		</footer>
 		<button type="button" is="share-button" class="round shadow fixed z-4" aria-label="Share">
-			<svg class="current-color icon">
+			<svg class="current-color icon" aria-hidden="true" aria-label="icon" aria-role="img">
 				<use xlink:href="/img/icons.svg#public-share"></use>
 			</svg>
 		</button>
