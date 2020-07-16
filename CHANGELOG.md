@@ -9,8 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v1.0.3] - 2020-07-16
 
-## [v1.0.2] - 2020-06-29
-
 ### Changed
 - Update all dependencies
 - Maintain consistency with [jekyll-template](https://github.com/shgysk8zer0/jekyll-template)
