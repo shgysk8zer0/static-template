@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.5] - 2020-07-17
+
+### Updated
+- eslint now indents on each `case` for a `switch`
+- Set indent style & width in editor config file
+
 ## [v1.0.4] - 2020-07-07
 
 ### Updated
