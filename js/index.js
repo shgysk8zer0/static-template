@@ -1,6 +1,6 @@
-import 'https://unpkg.com/@webcomponents/custom-elements@1.4.1/custom-elements.min.js';
 import 'https://cdn.kernvalley.us/js/std-js/deprefixer.js';
 import 'https://cdn.kernvalley.us/js/std-js/shims.js';
+import 'https://unpkg.com/@webcomponents/custom-elements@1.4.2/custom-elements.min.js';
 import 'https://cdn.kernvalley.us/components/share-button.js';
 import 'https://cdn.kernvalley.us/components/current-year.js';
 import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
@@ -9,13 +9,23 @@ import 'https://cdn.kernvalley.us/components/pwa/install.js';
 import 'https://cdn.kernvalley.us/components/github/user.js';
 import 'https://cdn.kernvalley.us/components/share-to-button/share-to-button.js';
 import 'https://cdn.kernvalley.us/components/date-locale.js';
-import {$, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import { $, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import { loadScript } from 'https://cdn.kernvalley.us/js/std-js/loader.js';
+import { importGa } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
+import { GA } from './consts.js';
 
 document.documentElement.classList.replace('no-js', 'js');
 document.body.classList.toggle('no-dialog', document.createElement('dialog') instanceof HTMLUnknownElement);
 document.body.classList.toggle('no-details', document.createElement('details') instanceof HTMLUnknownElement);
 
-ready().then(async () => {
+if (typeof GA === 'string') {
+	importGa(GA);
+}
+
+Promise.allSettled([
+	ready(),
+	loadScript('https://cdn.polyfill.io/v3/polyfill.min.js'),
+]).then(async () => {
 	$('[data-scroll-to]').click(event => {
 		const target = document.querySelector(event.target.closest('[data-scroll-to]').dataset.scrollTo);
 		target.scrollIntoView({
