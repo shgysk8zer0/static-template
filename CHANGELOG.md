@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Add missing classes to properly style share button
+
 ## [v1.0.6] - 2020-08-21
 
 ### Added
