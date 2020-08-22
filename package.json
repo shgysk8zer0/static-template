@@ -10,7 +10,7 @@
       "port": 8000
     },
     "dir": {
-      "css": "*.css **/*.css",
+      "css": "css/",
       "js": "js/",
       "img": "img/",
       "html": "*.html **/*.html"
