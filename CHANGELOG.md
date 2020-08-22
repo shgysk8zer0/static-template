@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add `htmlhint` as dev dependency
 
+### Removed
+- Delete redundant CSS
+
 ### Changed
 - Dynamically load Polyfill and Google Analytics scripts
 - Update Super Linter config
