@@ -11,9 +11,8 @@ import 'https://cdn.kernvalley.us/components/share-to-button/share-to-button.js'
 import 'https://cdn.kernvalley.us/components/date-locale.js';
 import { $, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import { loadScript } from 'https://cdn.kernvalley.us/js/std-js/loader.js';
-import { importGa } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
+import { importGa, externalHandler, telHandler, mailtoHandler } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
 import { GA } from './consts.js';
-import { outbound, madeCall, emailed } from './analytics.js';
 
 document.documentElement.classList.replace('no-js', 'js');
 document.body.classList.toggle('no-dialog', document.createElement('dialog') instanceof HTMLUnknownElement);
@@ -29,9 +28,9 @@ if (typeof GA === 'string') {
 
 			await ready();
 
-			$('a[rel~="external"]').click(outbound, { passive: true, capture: true });
-			$('a[href^="tel:"]').click(madeCall, { passive: true, capture: true });
-			$('a[href^="mailto:"]').click(emailed, { passive: true, capture: true });
+			$('a[rel~="external"]').click(externalHandler, { passive: true, capture: true });
+			$('a[href^="tel:"]').click(telHandler, { passive: true, capture: true });
+			$('a[href^="mailto:"]').click(mailtoHandler, { passive: true, capture: true });
 		});
 	});
 }
