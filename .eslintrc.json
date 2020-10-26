@@ -40,6 +40,9 @@
         }]
     },
     "globals": {
-      "cookieStore": "readonly"
+      "launchQueue": "readonly",
+      "cookieStore": "readonly",
+      "showOpenFilePicker": "readonly",
+      "showSaveFilePicker": "readonly"
     }
 }
