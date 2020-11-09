@@ -20,8 +20,7 @@ document.body.classList.toggle('no-details', document.createElement('details') i
 
 if (typeof GA === 'string') {
 	requestIdleCallback(() => {
-		importGa(GA).then(async () => {
-			/* global ga */
+		importGa(GA).then(async ({ ga }) => {
 			ga('create', GA, 'auto');
 			ga('set', 'transport', 'beacon');
 			ga('send', 'pageview');
