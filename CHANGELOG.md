@@ -7,8 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Use `_headers` for setting HTTP headers (including CSP)
+- Add `/reset` page
+- Implement preloading
+- Add `<weather-current>`, `<spotify-player>`, `<youtube-player>`, & `<ad-block>` examples
+- Misc. style changes
+- Update service worker
+
 ### Fixed
 - Add missing classes to properly style share button
+
+### Removed
+- Do not set (old) `data-service-worker` attribute
 
 ## [v1.0.6] - 2020-08-21
 
