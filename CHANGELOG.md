@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Add missing classes to properly style share button
+- Update to match theme colors
 
 ### Removed
 - Do not set (old) `data-service-worker` attribute
