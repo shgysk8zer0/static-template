@@ -16,3 +16,7 @@ img.avatar {
 	vertical-align: middle;
 	margin-left: 1.2em;
 }
+
+.full-width {
+	width: 100%;
+}

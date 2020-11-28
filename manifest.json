@@ -7,7 +7,7 @@
   "description": "A template repository for static sites, including skeleton JS, CSS, SVGs, fonts, etc.",
   "orientation": "any",
   "start_url": "/",
-  "theme_color": "#528ff9",
+  "theme_color": "#007bff",
   "background_color": "#242424",
   "display": "standalone",
   "icons": [{

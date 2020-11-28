@@ -1,6 +1,6 @@
 {
   "name": "static-template",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": true,
   "description": "A template repository for static sites, including skeleton JS, CSS, SVGs, fonts, etc.",
   "config": {
