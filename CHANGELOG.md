@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.7] - 2020-11-28
+
 ### Changed
 - Use `_headers` for setting HTTP headers (including CSP)
 - Add `/reset` page
