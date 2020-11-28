@@ -46,7 +46,15 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/img/icon-16.png" />
 		<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#528ff9" />
 		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="preload" href="https://cdn.polyfill.io/v3/polyfill.min.js" as="script" type="application/javascript" crossorigin="anonymous" referrerpolicy="no-referrer" importance="high" />
 		<link rel="preload" href="/img/icons.svg" as="image" type="image/svg+xml" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/ad/block.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/spotify/player.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/weather/current.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/github/user.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preload" href="https://cdn.kernvalley.us/components/share-to-button/share-to-button.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://api.github.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://baconipsum.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<!-- <link rel="stylesheet" href="/css/index.css" media="all" /> -->
 		<link rel="stylesheet" href="/css/index.min.css" media="all" />
 	</head>
@@ -100,7 +108,16 @@
 				</section>
 			</article>
 		</main>
-		<aside id="sidebar" class="card shadow"></aside>
+		<aside id="sidebar" class="card shadow center">
+			<weather-current postalcode="93240" appid="f6825b626e68392fba2e4488a204f986" loading="lazy"></weather-current>
+			<spotify-player uri="spotify:playlist:37i9dQZF1DWUk47CLxI4Uo" loading="lazy" class="full-width" large=""></spotify-player>
+			<ad-block url="https://ads.kernvalley.us" id="57c7036d-f128-4506-962b-373b8fb5ea78" medium="web" source="static-demo" campaign="kv-ads" layout="card" theme="auto" loading="lazy">
+				<span slot="label">Kern Valley Ads</span>
+				<span slot="description">Advertise on websites throughout the Kern River Valley</span>
+				<span slot="calltoaction">Click here to get started!</span>
+				<img slot="image" src="https://cdn.kernvalley.us/img/branding/ads.kernvalley.us.svg" loading="lazy" decoding="async" alt="KV Ads logo" crossorigin="anonymous" referrerpolicy="no-referrer" width="64" height="64" />
+			</ad-block>
+		</aside>
 		<footer id="footer">
 			<div class="social-links cols-2">
 				<div class="cols inline-block">
@@ -152,7 +169,7 @@
 			</button>
 			<hr />
 			<div class="copyright">
-				<github-user user="kernvalley">
+				<github-user user="kernvalley" loading="lazy">
 					<h3 slot="header" class="center">Created By</h3>
 					<div slot="footer">
 						<span>©</span>
