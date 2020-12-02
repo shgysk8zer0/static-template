@@ -14,6 +14,7 @@ import 'https://cdn.kernvalley.us/components/weather/current.js';
 import 'https://cdn.kernvalley.us/components/spotify/player.js';
 import 'https://cdn.kernvalley.us/components/youtube/player.js';
 import { $, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import * as handlers from 'https://cdn.kernvalley.us/js/std-js/data-handlers.js';
 import { loadScript } from 'https://cdn.kernvalley.us/js/std-js/loader.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
 import { GA } from './consts.js';
@@ -42,32 +43,10 @@ Promise.allSettled([
 	ready(),
 	loadScript('https://cdn.polyfill.io/v3/polyfill.min.js'),
 ]).then(async () => {
-	$('[data-scroll-to]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-scroll-to]').dataset.scrollTo);
-		target.scrollIntoView({
-			bahavior: 'smooth',
-			block: 'start',
-		});
-	});
-
-	$('[data-show]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-show]').dataset.show);
-		if (target instanceof HTMLElement) {
-			target.show();
-		}
-	});
-
-	$('[data-show-modal]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-show-modal]').dataset.showModal);
-		if (target instanceof HTMLElement) {
-			target.showModal();
-		}
-	});
-
-	$('[data-close]').click(event => {
-		const target = document.querySelector(event.target.closest('[data-close]').dataset.close);
-		if (target instanceof HTMLElement) {
-			target.tagName === 'DIALOG' ? target.close() : target.open = false;
-		}
-	});
+	$('[data-scroll-to]').click(handlers.scrollTo);
+	$('[data-show]').click(handlers.show);
+	$('[data-show-modal]').click(handlers.showModal);
+	$('[data-close]').click(handlers.close);
+	$('[data-toggle-attribute]').click(handlers.toggleAttribute);
+	$('[data-toggle-class]').click(handlers.toggleClass);
 });
