@@ -13,15 +13,18 @@ import 'https://cdn.kernvalley.us/components/ad/block.js';
 import 'https://cdn.kernvalley.us/components/weather/current.js';
 import 'https://cdn.kernvalley.us/components/spotify/player.js';
 import 'https://cdn.kernvalley.us/components/youtube/player.js';
-import { $, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import { $, ready, toggleClass } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import * as handlers from 'https://cdn.kernvalley.us/js/std-js/data-handlers.js';
 import { loadScript } from 'https://cdn.kernvalley.us/js/std-js/loader.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
 import { GA } from './consts.js';
 
+toggleClass(document.documentElement, {
+	'no-dialog': document.createElement('dialog') instanceof HTMLUnknownElement,
+	'no-details': document.createElement('details') instanceof HTMLUnknownElement,
+});
+
 document.documentElement.classList.replace('no-js', 'js');
-document.body.classList.toggle('no-dialog', document.createElement('dialog') instanceof HTMLUnknownElement);
-document.body.classList.toggle('no-details', document.createElement('details') instanceof HTMLUnknownElement);
 
 if (typeof GA === 'string') {
 	requestIdleCallback(() => {
@@ -49,4 +52,5 @@ Promise.allSettled([
 	$('[data-close]').click(handlers.close);
 	$('[data-toggle-attribute]').click(handlers.toggleAttribute);
 	$('[data-toggle-class]').click(handlers.toggleClass);
+	$('[data-remove]').click(handlers.remove);
 });
