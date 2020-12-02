@@ -24,6 +24,27 @@ toggleClass(document.documentElement, {
 	'no-details': document.createElement('details') instanceof HTMLUnknownElement,
 });
 
+cookieStore.get('theme').then(cookie => {
+	const setTheme = (cookie) => {
+		if (cookie.name === 'theme') {
+			$('[data-theme], :root').data({ theme: cookie.value });
+			$('[theme]').attr({ theme: cookie.value });
+		}
+	};
+
+	if (cookie) {
+		setTheme(cookie);
+	}
+
+	cookieStore.addEventListener('change', ({ changed }) => {
+		const cookie = changed.find(({ name }) => name === 'theme');
+
+		if (cookie) {
+			setTheme(cookie);
+		}
+	});
+});
+
 document.documentElement.classList.replace('no-js', 'js');
 
 if (typeof GA === 'string') {
