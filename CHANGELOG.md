@@ -7,8 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.0.8] - 2020-12-15
+
 ### Added
-- Theme handling via `cookieStgore`
+- Theme handling via `cookieStore`
+- `<button is="app-list">` to show KRV Apps menu
+- Add SVG icons via submodules (no that it's supported)
+
+### Changed
+- Move `<button is="pwa-install">` to `<nav>`
+- Use `init()` to set listeners for all `data-*` handlers
+- Misc. style changes
+
+### Removed
+- Git stored version of `icons.svg`
 
 ## [v1.0.7] - 2020-11-28
 
