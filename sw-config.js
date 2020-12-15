@@ -5,6 +5,7 @@ const config = {
 	fresh: [
 		'/',
 		'https://baconipsum.com/api/?paras=8&format=json&type=all-meat',
+		'https://apps.kernvalley.us/apps.json',
 	].map(url => new URL(url, location.origin).href),
 	stale: [
 		'/js/index.min.js',
