@@ -15,13 +15,13 @@ import 'https://cdn.kernvalley.us/components/ad/block.js';
 import 'https://cdn.kernvalley.us/components/weather/current.js';
 import 'https://cdn.kernvalley.us/components/spotify/player.js';
 import 'https://cdn.kernvalley.us/components/youtube/player.js';
-import { $, ready, toggleClass } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import { $, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 import { init } from 'https://cdn.kernvalley.us/js/std-js/data-handlers.js';
 import { loadScript } from 'https://cdn.kernvalley.us/js/std-js/loader.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
 import { GA } from './consts.js';
 
-toggleClass(document.documentElement, {
+$(document.documentElement).toggleClass(document.documentElement, {
 	'no-dialog': document.createElement('dialog') instanceof HTMLUnknownElement,
 	'no-details': document.createElement('details') instanceof HTMLUnknownElement,
 	'js': true,
@@ -31,9 +31,11 @@ toggleClass(document.documentElement, {
 if (typeof GA === 'string') {
 	requestIdleCallback(() => {
 		importGa(GA).then(async ({ ga }) => {
-			ga('create', GA, 'auto');
-			ga('set', 'transport', 'beacon');
-			ga('send', 'pageview');
+			if (ga instanceof Function) {
+				ga('create', GA, 'auto');
+				ga('set', 'transport', 'beacon');
+				ga('send', 'pageview');
+			}
 
 			await ready();
 
@@ -45,8 +47,6 @@ if (typeof GA === 'string') {
 }
 
 Promise.allSettled([
-	ready(),
+	init(),
 	loadScript('https://cdn.polyfill.io/v3/polyfill.min.js'),
-]).then(async () => {
-	init().catch(console.error);
-});
+]).catch(console.error);
