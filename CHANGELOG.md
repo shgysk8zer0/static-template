@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Load `polyfill.io` and custom elements shim as `<script nomodule>`
+
 ## [v1.0.8] - 2020-12-15
 
 ### Added
