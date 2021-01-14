@@ -1,5 +1,6 @@
 /* eslint no-unused-vars: 0 */
 /* eslint-env serviceworker */
+
 const config = {
 	version: '1.0.0',
 	fresh: [
@@ -26,7 +27,11 @@ const config = {
 		'https://cdn.kernvalley.us/components/share-to-button/share-to-button.css',
 		'https://cdn.kernvalley.us/components/pwa/prompt.html',
 		'https://cdn.kernvalley.us/components/pwa/prompt.css',
+		'https://cdn.kernvalley.us/img/logos/play-badge.svg',
+		'https://cdn.kernvalley.us/img/logos/itunes-badge.svg',
+		'https://cdn.kernvalley.us/img/logos/windows-badge.svg',
 		'https://cdn.kernvalley.us/fonts/roboto.woff2',
+		'/manifest.json',
 	].map(path => new URL(path, location.origin).href),
 	allowed: [
 		/https:\/\/secure\.gravatar\.com\/avatar\/*/,

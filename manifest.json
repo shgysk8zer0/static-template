@@ -27,14 +27,34 @@
     "purpose": "any maskable"
   }],
   "screenshots": [{
-    "src": "https://i.imgur.com/Mx3Wlp0l.jpeg",
+    "src": "https://i.imgur.com/Mx3Wlp0h.jpg",
+    "sizes": "1024x501",
+    "type": "image/jpeg"
+  }, {
+    "src": "https://i.imgur.com/Mx3Wlp0l.jpg",
     "sizes": "640x313",
+    "type": "image/jpeg"
+  }, {
+    "src": "https://i.imgur.com/Mx3Wlp0m.jpg",
+    "sizes": "320x156",
+    "type": "image/jpeg"
+  }, {
+    "src": "https://i.imgur.com/Mx3Wlp0t.jpg",
+    "sizes": "160x78",
     "type": "image/jpeg"
   }],
   "shortcuts": [],
   "share_target": {},
-  "categories": [],
-  "related_applications": [],
+  "categories": [
+    "lifestlye",
+    "utility"
+  ],
+  "iarc_rating_id": null,
+  "prefer_related_applications": false,
+  "related_applications": [{
+    "platform": "webapp",
+    "url": "/manifest.json"
+  }],
   "developer": {
 		"name": "Chris Zuber",
 		"url": "https://kernvalley.us"
