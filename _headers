@@ -21,7 +21,8 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.kernvalley.us;
 
 /service-worker.js
-  Content-Security-Policy: default-src 'self'; connect-src *
+  Content-Security-Policy: default-src 'self'; connect-src *; script-src 'self' https://cdn.kernvalley.us/service-worker.js https://*.netlify.live/service-worker.js https://*.netlify.app/service-worker.js;
+  Link: <https://cdn.kernvalley.us/service-worker.js> rel=preload; as=script
   Link: </sw-config.js> rel=preload; as=script
 
 /*
