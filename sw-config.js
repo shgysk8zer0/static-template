@@ -2,7 +2,7 @@
 /* eslint-env serviceworker */
 
 const config = {
-	version: '1.0.0',
+	version: '1.1.0',
 	fresh: [
 		'/',
 		'https://baconipsum.com/api/?paras=8&format=json&type=all-meat',

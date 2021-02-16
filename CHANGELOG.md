@@ -7,15 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.1.0] - 2021-02-16
+
 ### Changed
 - Load `polyfill.io` and custom elements shim as `<script nomodule>`
+- Use own (single) npm package instead of serveral others
 
-## [v1.0.8] - 2020-12-15
+## [v1.1.0] - 2020-12-15
 
 ### Added
 - Theme handling via `cookieStore`
 - `<button is="app-list">` to show KRV Apps menu
 - Add SVG icons via submodules (no that it's supported)
+- Version bumping scripts via `npm run version:bump`
 
 ### Changed
 - Move `<button is="pwa-install">` to `<nav>`
