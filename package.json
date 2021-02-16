@@ -41,6 +41,7 @@
     "start": "npm run netlify",
     "preinstall": "npm run git:submodules",
     "postinstall": "npm run build",
+    "preversion": "npm test",
     "git:fetch": "git fetch --prune --tags",
     "git:submodules": "if [ -f '.gitmodules' ]; then git submodule update --init --recursive; fi",
     "lint:css": "if [ -f '.stylelintrc.json' ]; then stylelint ${npm_package_config_dir_css}; fi",
