@@ -24,7 +24,7 @@ import { GA } from './consts.js';
 
 css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`});
 
-on([document.documentElement], {
+on([window], {
 	resize: debounce(() => css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`})),
 	scroll: () => {
 		requestAnimationFrame(() => {
