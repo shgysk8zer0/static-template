@@ -15,11 +15,23 @@ import 'https://cdn.kernvalley.us/components/weather/current.js';
 import 'https://cdn.kernvalley.us/components/spotify/player.js';
 import 'https://cdn.kernvalley.us/components/youtube/player.js';
 import 'https://cdn.kernvalley.us/components/app/stores.js';
-import { ready, loaded, toggleClass, on } from 'https://cdn.kernvalley.us/js/std-js/dom.js';
+import { ready, loaded, toggleClass, on, css } from 'https://cdn.kernvalley.us/js/std-js/dom.js';
+import { debounce } from 'https://cdn.kernvalley.us/js/std-js/events.js';
 import { getCustomElement } from 'https://cdn.kernvalley.us/js/std-js/custom-elements.js';
 import { init } from 'https://cdn.kernvalley.us/js/std-js/data-handlers.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
 import { GA } from './consts.js';
+
+css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`});
+
+on([document.documentElement], {
+	resize: debounce(() => css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`})),
+	scroll: () => {
+		requestAnimationFrame(() => {
+			css('#header', { 'background-position-y': `${-0.5 * scrollY}px` });
+		});
+	}
+}, { passive: true });
 
 toggleClass([document.documentElement], {
 	'no-dialog': document.createElement('dialog') instanceof HTMLUnknownElement,
