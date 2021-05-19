@@ -17,7 +17,7 @@ const config = {
 		'https://cdn.kernvalley.us/components/weather/current.html',
 		'https://cdn.kernvalley.us/components/spotify/player.html',
 		'https://cdn.kernvalley.us/components/share-to-button/share-to-button.html',
-		'https://cdn.kernvalley.us/components/pwa/prompt.html',
+		'https://cdn.kernvalley.us/components/install/prompt.html',
 
 		/* JS */
 		'/js/index.min.js',
@@ -30,7 +30,7 @@ const config = {
 		'https://cdn.kernvalley.us/components/weather/current.css',
 		'https://cdn.kernvalley.us/components/spotify/player.css',
 		'https://cdn.kernvalley.us/components/share-to-button/share-to-button.css',
-		'https://cdn.kernvalley.us/components/pwa/prompt.css',
+		'https://cdn.kernvalley.us/components/install/prompt.css',
 
 		/* Images */
 		'/img/icons.svg',
@@ -48,8 +48,10 @@ const config = {
 		'https://secure.gravatar.com/avatar/',
 		'https://i.imgur.com/',
 		/https:\/\/*\.githubusercontent.com\/u\/*/,
+		/\.(jpg|png|webp|svg|gif)$/,
 	],
 	allowedFresh: [
 		'https://api.github.com/users/',
+		/\.(html|css|js|json)$/,
 	]
 };
