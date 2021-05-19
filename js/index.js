@@ -5,7 +5,7 @@ import 'https://cdn.kernvalley.us/components/share-button.js';
 import 'https://cdn.kernvalley.us/components/current-year.js';
 import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
 import 'https://cdn.kernvalley.us/components/gravatar-img.js';
-import 'https://cdn.kernvalley.us/components/pwa/install.js';
+import 'https://cdn.kernvalley.us/components/install/prompt.js';
 import 'https://cdn.kernvalley.us/components/github/user.js';
 import 'https://cdn.kernvalley.us/components/app/list-button.js';
 import 'https://cdn.kernvalley.us/components/share-to-button/share-to-button.js';
@@ -15,12 +15,13 @@ import 'https://cdn.kernvalley.us/components/weather/current.js';
 import 'https://cdn.kernvalley.us/components/spotify/player.js';
 import 'https://cdn.kernvalley.us/components/youtube/player.js';
 import 'https://cdn.kernvalley.us/components/app/stores.js';
-import { $, ready } from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import { ready, loaded, toggleClass, on } from 'https://cdn.kernvalley.us/js/std-js/dom.js';
+import { getCustomElement } from 'https://cdn.kernvalley.us/js/std-js/custom-elements.js';
 import { init } from 'https://cdn.kernvalley.us/js/std-js/data-handlers.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from 'https://cdn.kernvalley.us/js/std-js/google-analytics.js';
 import { GA } from './consts.js';
 
-$(document.documentElement).toggleClass(document.documentElement, {
+toggleClass([document.documentElement], {
 	'no-dialog': document.createElement('dialog') instanceof HTMLUnknownElement,
 	'no-details': document.createElement('details') instanceof HTMLUnknownElement,
 	'js': true,
@@ -28,23 +29,29 @@ $(document.documentElement).toggleClass(document.documentElement, {
 });
 
 if (typeof GA === 'string') {
-	requestIdleCallback(() => {
-		importGa(GA).then(async ({ ga }) => {
-			if (ga instanceof Function) {
-				ga('create', GA, 'auto');
-				ga('set', 'transport', 'beacon');
-				ga('send', 'pageview');
+	loaded().then(() => {
+		requestIdleCallback(() => {
+			importGa(GA).then(async ({ ga, hasGa }) => {
+				if (hasGa()) {
+					ga('create', GA, 'auto');
+					ga('set', 'transport', 'beacon');
+					ga('send', 'pageview');
 
-				await ready();
-
-				$('a[rel~="external"]').click(externalHandler, { passive: true, capture: true });
-				$('a[href^="tel:"]').click(telHandler, { passive: true, capture: true });
-				$('a[href^="mailto:"]').click(mailtoHandler, { passive: true, capture: true });
-			}
+					on('a[rel~="external"]', ['click'], externalHandler, { passive: true, capture: true });
+					on('a[href^="tel:"]', ['click'], telHandler, { passive: true, capture: true });
+					on('a[href^="mailto:"]', ['click'], mailtoHandler, { passive: true, capture: true });
+				}
+			});
 		});
 	});
 }
 
-Promise.allSettled([
-	init(),
-]).catch(console.error);
+Promise.all([
+	getCustomElement('install-prompt'),
+	ready(),
+]).then(([HTMLInstallPromptElement]) => {
+	init();
+
+	on('#install-btn', ['click'], () => new HTMLInstallPromptElement().show())
+		.forEach(el => el.hidden = false);
+});
