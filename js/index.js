@@ -1,22 +1,28 @@
 import '@shgysk8zer0/kazoo/theme-cookie.js';
-import { ready, loaded, toggleClass, on, css } from '@shgysk8zer0/kazoo/dom.js';
+import { ready, toggleClass, on, css } from '@shgysk8zer0/kazoo/dom.js';
 import { debounce } from '@shgysk8zer0/kazoo/events.js';
-import { getCustomElement } from '@shgysk8zer0/kazoo/custom-elements.js';
 import { init } from '@shgysk8zer0/kazoo/data-handlers.js';
+import { getGooglePolicy, getDefaultPolicy } from '@shgysk8zer0/kazoo/trust-policies.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from '@shgysk8zer0/kazoo/google-analytics.js';
 import { GA } from './consts.js';
 import './components.js';
 
-css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`});
+getDefaultPolicy();
 
-on([window], {
-	resize: debounce(() => css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`})),
-	scroll: () => {
-		requestAnimationFrame(() => {
-			css('#header', { 'background-position-y': `${-0.5 * scrollY}px` });
-		});
-	}
-}, { passive: true });
+if (! CSS.supports('height', '1dvh')) {
+	css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`});
+
+	requestIdleCallback(() => {
+		on([window], {
+			resize: debounce(() => css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`})),
+			scroll: () => {
+				requestAnimationFrame(() => {
+					css('#header', { 'background-position-y': `${-0.5 * scrollY}px` });
+				});
+			}
+		}, { passive: true });
+	});
+}
 
 toggleClass([document.documentElement], {
 	'no-dialog': document.createElement('dialog') instanceof HTMLUnknownElement,
@@ -25,26 +31,24 @@ toggleClass([document.documentElement], {
 	'no-js': false,
 });
 
-if (typeof GA === 'string') {
-	loaded().then(() => {
-		requestIdleCallback(() => {
-			importGa(GA).then(async ({ ga, hasGa }) => {
-				if (hasGa()) {
-					ga('create', GA, 'auto');
-					ga('set', 'transport', 'beacon');
-					ga('send', 'pageview');
+if (typeof GA === 'string' && GA.length !== 0) {
+	scheduler.postTask(() => {
+		importGa(GA, {}, { policy: getGooglePolicy() }).then(async ({ ga, hasGa }) => {
+			if (hasGa()) {
+				ga('create', GA, 'auto');
+				ga('set', 'transport', 'beacon');
+				ga('send', 'pageview');
 
-					on('a[rel~="external"]', ['click'], externalHandler, { passive: true, capture: true });
-					on('a[href^="tel:"]', ['click'], telHandler, { passive: true, capture: true });
-					on('a[href^="mailto:"]', ['click'], mailtoHandler, { passive: true, capture: true });
-				}
-			});
+				on('a[rel~="external"]', ['click'], externalHandler, { passive: true, capture: true });
+				on('a[href^="tel:"]', ['click'], telHandler, { passive: true, capture: true });
+				on('a[href^="mailto:"]', ['click'], mailtoHandler, { passive: true, capture: true });
+			}
 		});
-	});
+	}, { priority: 'background' });
 }
 
 Promise.all([
-	getCustomElement('install-prompt'),
+	customElements.whenDefined('install-prompt'),
 	ready(),
 ]).then(([HTMLInstallPromptElement]) => {
 	init();

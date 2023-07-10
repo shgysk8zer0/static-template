@@ -3,4 +3,11 @@
 
 :root {
 	--map-width: 100%;
+	--viewport-height: 100dvh;
+}
+
+@supports not (height: 100dvh) {
+	:root {
+		--viewport-height: calc(100vh - var(--nav-height, 3rem));
+	}
 }
