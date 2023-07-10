@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" data-layout="right-sidebar" data-theme="auto" data-service-worker="/service-worker.js" data-scope="/" data-reload-on-update="" prefix="og: http://ogp.me/ns#" itemtype="https://schema.org/WebPage" itemscope="">
+<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" data-layout="right-sidebar" data-theme="auto" data-service-worker="/service-worker.js" data-scope="/" data-reload-on-update="" data-trusted-policies="default empty#html empty#script sanitizer-raw#html dompurify share-to-buttons#html weather-current#html krv-events#html disqus#script-url pwa-install html-notification#script spotify-player youtube#embed github-user#html" prefix="og: http://ogp.me/ns#" itemtype="https://schema.org/WebPage" itemscope="">
 	<head>
 		<base href="/" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,viewport-fit=cover" />
-		<meta name="color-scheme" content="dark light" />
+		<meta name="color-scheme" content="light dark" />
 		<meta name="robots" content="follow,index" />
 		<meta name="description" content="" />
 		<meta itemprop="description" content="" />
@@ -37,7 +37,30 @@
 		<meta name="theme-color" content="#007bff" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="#007bff" />
 		<title itemprop="headline">Static Template</title>
-		<script type="text/javascript" src="https://cdn.polyfill.io/v3/polyfill.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" defer="" nomodule=""></script>
+		<script type="importmap" nonce="3d07a622-9356-446d-8799-7ea4958d067f">
+			{
+				"imports": {
+					"@shgysk8zer0/kazoo/": "https://unpkg.com/@shgysk8zer0/kazoo@0.2.2/",
+					"@shgysk8zer0/konami": "https://unpkg.com/@shgysk8zer0/konami@1.0.9/konami.js",
+					"@shgysk8zer0/polyfills": "https://unpkg.com/@shgysk8zer0/polyfills@0.2.3/all.min.js",
+					"@shgysk8zer0/polyfills/": "https://unpkg.com/@shgysk8zer0/polyfills@0.2.3/",
+					"@shgysk8zer0/components/": "https://unpkg.com/@shgysk8zer0/components@0.1.1/",
+					"@kernvalley/components/": "https://unpkg.com/@kernvalley/components@1.1.0/",
+					"@shgysk8zer0/http-status": "https://unpkg.com/@shgysk8zer0/http-status@1.1.1/http-status.js",
+					"@webcomponents/custom-elements": "https://unpkg.com/@webcomponents/custom-elements@1.6.0/custom-elements.min.js",
+					"leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
+					"firebase/": "https://www.gstatic.com/firebasejs/9.23.0/",
+					"urlpattern-polyfill": "https://unpkg.com/urlpattern-polyfill@9.0.0/index.js",
+					"highlight.js": "https://unpkg.com/@highlightjs/cdn-assets@11.8.0/es/highlight.min.js",
+					"highlight.js/": "https://unpkg.com/@highlightjs/cdn-assets@11.8.0/",
+					"marked": "https://unpkg.com/marked@5.1.0/src/marked.js",
+					"marked-highlight": "https://unpkg.com/marked-highlight@2.0.1/src/index.js"
+				},
+				"scope": {}
+			}
+		</script>
+		<script type="application/javascript" defer="" referrerpolicy="no-referrer" crossorigin="anonymous" integrity="sha384-wl/RnLPkNi8xEjcHWQn3+bn3rOHluF9WhOSxg3ujMS9bjUzhDuWrQjlq2q76JGtS" src="https://unpkg.com/@shgysk8zer0/polyfills@0.2.3/all.min.js" fetchpriority="auto"></script>
+		<script type="application/javascript" defer="" referrerpolicy="no-referrer" crossorigin="anonymous" integrity="sha384-55L/wO9o0uIVTeubRIDQB4bewfNqyxrj4OXuxlW24NMEk+ioZwMHVw/tFV78mM+k" src="https://unpkg.com/@shgysk8zer0/kazoo@0.2.2/harden.js" fetchpriority="auto"></script>
 		<script type="text/javascript" src="https://unpkg.com/@webcomponents/custom-elements@1.4.2/custom-elements.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" integrity="sha384-xyhN4T4+9VPh8uXl6uWjGzsqwNXN9C2tla8b6zSrSqYlMFUoeCdoxiEJU0js+GNE" defer="" nomodule=""></script>
 		<!-- <script type="module" src="/js/index.js" referrerpolicy="no-referrer"></script> -->
 		<script src="/js/index.min.js" referrerpolicy="no-referrer" defer=""></script>
@@ -50,11 +73,6 @@
 		<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#007bff" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="preload" href="/img/icons.svg" as="image" type="image/svg+xml" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/ad/block.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/spotify/player.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/weather/current.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/github/user.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="preload" href="https://cdn.kernvalley.us/components/share-to-button/share-to-button.css" as="style" type="text/css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="preconnect" href="https://api.github.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="preconnect" href="https://baconipsum.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<!-- <link rel="stylesheet" href="/css/index.css" media="all" /> -->
@@ -127,12 +145,12 @@
 		<aside id="sidebar" class="card shadow center">
 			<weather-current postalcode="93240" appid="f6825b626e68392fba2e4488a204f986" loading="lazy" theme="auto"></weather-current>
 			<spotify-player uri="spotify:playlist:37i9dQZF1DWUk47CLxI4Uo" loading="lazy" class="full-width" large=""></spotify-player>
-			<ad-block url="https://ads.kernvalley.us" id="57c7036d-f128-4506-962b-373b8fb5ea78" medium="web" source="static-demo" campaign="kv-ads" layout="card" theme="auto" loading="lazy">
+			<krv-ad url="https://ads.kernvalley.us" id="57c7036d-f128-4506-962b-373b8fb5ea78" medium="web" source="static-demo" campaign="kv-ads" layout="card" theme="auto" loading="lazy">
 				<span slot="label">Kern Valley Ads</span>
 				<span slot="description">Advertise on websites throughout the Kern River Valley</span>
 				<span slot="calltoaction">Click here to get started!</span>
 				<img slot="image" src="https://cdn.kernvalley.us/img/branding/ads.kernvalley.us.svg" loading="lazy" decoding="async" alt="KV Ads logo" crossorigin="anonymous" referrerpolicy="no-referrer" width="64" height="64" />
-			</ad-block>
+			</krv-ad>
 		</aside>
 		<footer id="footer">
 			<div class="flex row wrap space-around footer-links">

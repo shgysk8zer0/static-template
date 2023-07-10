@@ -6,7 +6,7 @@
     "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 2020
+        "ecmaVersion": 2022
     },
     "plugins": [],
     "rules": {
@@ -38,6 +38,7 @@
       "launchQueue": "readonly",
       "cookieStore": "readonly",
       "showOpenFilePicker": "readonly",
-      "showSaveFilePicker": "readonly"
+      "showSaveFilePicker": "readonly",
+      "scheduler": "readonly"
     }
 }

@@ -2,35 +2,33 @@
 /* eslint-env serviceworker */
 
 const config = {
-	version: '1.1.0',
+	version: '1.1.1',
 	fresh: [
 		'/',
 		'https://baconipsum.com/api/?paras=8&format=json&type=all-meat',
 		'https://apps.kernvalley.us/apps.json',
-		'/manifest.json',
+		'/webapp.webmanifest',
 	].map(url => new URL(url, location.origin).href),
 	stale: [
 		/* HTML and Templates */
-		'https://cdn.kernvalley.us/components/toast-message.html',
-		'https://cdn.kernvalley.us/components/github/user.html',
-		'https://cdn.kernvalley.us/components/ad/block.html',
-		'https://cdn.kernvalley.us/components/weather/current.html',
-		'https://cdn.kernvalley.us/components/spotify/player.html',
-		'https://cdn.kernvalley.us/components/share-to-button/share-to-button.html',
-		'https://cdn.kernvalley.us/components/install/prompt.html',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/github/user.html',
+		'https://unpkg.com/@kernvalley/components@1.1.0/ad.html',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/weather/current.html',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/spotify/player.html',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/button/share-to.html',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/install/prompt.html',
 
 		/* JS */
 		'/js/index.min.js',
 
 		/* CSS */
 		'/css/index.min.css',
-		'https://cdn.kernvalley.us/components/toast-message.css',
-		'https://cdn.kernvalley.us/components/github/user.css',
-		'https://cdn.kernvalley.us/components/ad/block.css',
-		'https://cdn.kernvalley.us/components/weather/current.css',
-		'https://cdn.kernvalley.us/components/spotify/player.css',
-		'https://cdn.kernvalley.us/components/share-to-button/share-to-button.css',
-		'https://cdn.kernvalley.us/components/install/prompt.css',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/github/user.css',
+		'https://unpkg.com/@shgysk8zer0/components@1.1.0/ad.css',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/weather/current.css',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/spotify/player.css',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/button/share-to.css',
+		'https://unpkg.com/@shgysk8zer0/components@0.1.1/install/prompt.css',
 
 		/* Images */
 		'/img/icons.svg',
