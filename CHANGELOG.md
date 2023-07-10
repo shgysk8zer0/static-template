@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.1.1] - 2023-07-10
+
+### Changed
+- Update dependencies and config
+- Rewrite to use importmap
+
 ## [v1.1.0] - 2021-02-16
 
 ### Changed

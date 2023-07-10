@@ -5,7 +5,7 @@
   X-XSS-Protection: 1; mode=block
   Link: </css/index.css>; rel=preload; as=style referrerpolicy=no-referrer;
   Link: </js/index.js>; rel=preload; as=script referrerpolicy=no-referrer;
-  Content-Security-Policy: default-src 'self'; img-src *; script-src 'self' cdn.kernvalley.us unpkg.com/ www.google-analytics.com www.googletagmanager.com cdn.polyfill.io/v3/polyfill.min.js; style-src 'self' cdn.kernvalley.us unpkg.com/; connect-src 'self' cdn.kernvalley.us apps.kernvalley.us/apps.json api.github.com/users/ api.openweathermap.org/data/2.5/ www.google-analytics.com/ www.googletagmanager.com/gtag/ baconipsum.com/api/; font-src cdn.kernvalley.us; media-src *; frame-src www.youtube-nocookie.com open.spotify.com/embed/; form-action 'self'; manifest-src 'self'; worker-src 'self'; reflected-xss block; upgrade-insecure-requests; block-all-mixed-content; disown-opener;
+  Content-Security-Policy: default-src 'self'; img-src * blob: data:; script-src 'self'  unpkg.com/ www.google-analytics.com www.googletagmanager.com 'nonce-3d07a622-9356-446d-8799-7ea4958d067f'; style-src 'self' cdn.kernvalley.us unpkg.com/ blob:; connect-src 'self' unpkg.com/@shgysk8zer0/ unpkg.com/@kernvalley/ apps.kernvalley.us/apps.json api.github.com/users/ api.openweathermap.org/data/2.5/ www.google-analytics.com/ www.googletagmanager.com/gtag/ baconipsum.com/api/; font-src cdn.kernvalley.us; media-src *; frame-src www.youtube-nocookie.com open.spotify.com/embed/; form-action 'self'; manifest-src 'self'; worker-src 'self'; reflected-xss block; upgrade-insecure-requests; block-all-mixed-content; disown-opener;
 
 /:placeholder/
   X-Content-Type-Options: nosniff
