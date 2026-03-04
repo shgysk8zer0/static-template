@@ -57,10 +57,11 @@
     "git:submodules": "if [ -f '.gitmodules' ]; then git submodule update --init --recursive; fi",
     "lint:css": "if [ -f '.stylelintrc.json' ]; then stylelint ${npm_package_config_dir_css}; fi",
     "lint:html": "if [ -f '.htmlhintrc' ]; then htmlhint ${npm_package_config_dir_html}; fi",
-    "lint:js": "if [ -f '.eslintrc.json' ]; then eslint .; fi",
+    "lint:js": "if [ -f 'eslint.config.js' ]; then eslint .; fi",
     "fix:css": "if [ -f './stylelintrc.json' ]; then stylelint ${npm_package_config_dir_css} --fix; fi",
-    "fix:js": "if [ -f '.eslintrc.json' ]; then eslint. --fix; fi",
-    "build": "npm run build:icons && npm run build:css && npm run build:js",
+    "fix:js": "if [ -f 'eslint.config.js' ]; then eslint . --fix; fi",
+    "update:importmap": "importmap-html index.html -a sha-384",
+    "build": "npm run build:icons && npm run build:css && npm run build:js && npm run update:importmap",
     "build:css": "if [ -f 'postcss.config.js' ]; then postcss ${npm_package_config_dir_css}index.css -o ${npm_package_config_dir_css}index.min.css; fi",
     "build:icons": "if [ -f ${npm_package_config_icons} ]; then svg-use-symbols -c ${npm_package_config_icons} -o 'img/icons.svg'; fi",
     "build:js": "if [ -f 'rollup.config.js' ]; then rollup --config; fi",
@@ -76,6 +77,6 @@
     "version:bump:major": "npm version --no-git-tag-version major && npm run create:lock"
   },
   "dependencies": {
-    "netlify-js-app": "^3.3.2"
+    "netlify-js-app": "^3.3.8"
   }
 }

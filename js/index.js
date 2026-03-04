@@ -2,12 +2,12 @@ import '@shgysk8zer0/kazoo/theme-cookie.js';
 import { ready, toggleClass, on, css } from '@shgysk8zer0/kazoo/dom.js';
 import { debounce } from '@shgysk8zer0/kazoo/events.js';
 import { init } from '@shgysk8zer0/kazoo/data-handlers.js';
-import { getGooglePolicy, getDefaultPolicy } from '@shgysk8zer0/kazoo/trust-policies.js';
+import { getGooglePolicy } from '@shgysk8zer0/kazoo/trust-policies.js';
 import { importGa, externalHandler, telHandler, mailtoHandler } from '@shgysk8zer0/kazoo/google-analytics.js';
 import { GA } from './consts.js';
 import './components.js';
 
-getDefaultPolicy();
+// getDefaultPolicy();
 
 if (! CSS.supports('height', '1dvh')) {
 	css([document.documentElement], { '--viewport-height': `${window.innerHeight}px`});
