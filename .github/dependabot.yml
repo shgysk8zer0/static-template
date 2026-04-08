@@ -1,33 +1,47 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: /
     schedule:
       interval: weekly
-      time: "13:00"
+      time: '09:00'
+      day: wednesday
+      timezone: America/Los_Angeles
     open-pull-requests-limit: 10
-    reviewers:
-      - shgysk8zer0
     assignees:
-     - shgysk8zer0
+      - shgysk8zer0
     labels:
       - dependencies
       - javascript
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
   - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: daily
-      time: "13:00"
-    open-pull-requests-limit: 10
-    reviewers:
-      - shgysk8zer0
-    assignees:
-      - shgysk8zer0
-  - package-ecosystem: gitsubmodule
-    directory: "/"
+    directory: /
     schedule:
       interval: weekly
-      time: "13:00"
+      time: '09:00'
+      day: wednesday
+      timezone: America/Los_Angeles
     open-pull-requests-limit: 10
-    reviewers:
+    assignees:
+      - shgysk8zer0
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: weekly
+      time: '09:00'
+      day: wednesday
+      timezone: America/Los_Angeles
+    open-pull-requests-limit: 10
+    groups:
+      all-dependencies:
+        patterns:
+          - '*'
+    assignees:
       - shgysk8zer0
